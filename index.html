@@ -7,10 +7,27 @@
         <title>Lista de Tarefas</title>
 
         <style>
+
             body{
                 background: rgb(2,2, 32);
                 color: white;
                 font: 14pt Tahoma;
+            }
+            button.remover {
+                position: absolute;
+                right: 100px;
+            }
+            ul li.naoRealizada {
+                list-style-type: '&#9744';
+                cursor: pointer;
+                text-indent: 10px;
+            }
+            ul li.realizada {
+                list-style-type: '&#9745';
+                cursor: pointer;
+                text-indent: 10px;
+                color: darkgray;
+                text-decoration: line-through;
             }
         </style>
 
@@ -21,11 +38,20 @@
         <div>
             <input type="text" id="caixaDeTexto" placeholder="Tarefa">
             <button id="botaoAdicionar" class="adicionar">+</button>
+
+            <select id="listaSuspensa" hidden>
+                <option>--Selecione uma opção--</option>
+                <option>Marcar Todas as Tarefas</option>
+                <option>|Desmarcar Todas as Tarefas</option>
+                <option>Limpar a Lista de Tarefas</option>
+            </select>
         </div>
 
         <ul id="listaTarefas">
 
         </ul>
+
+        <script src="index.js"></script>
 
     </body>
 </html>
